@@ -6,10 +6,10 @@ using namespace std;
 
 int main() {
     // Variables
-    double principal, rate, interest, amount;
+    double principal, rate, amount;
     int timesCompounded;
 
-    // Prompt user for input
+    // Get user input
     cout << "Enter the principal amount ($): ";
     cin >> principal;
 
@@ -20,13 +20,13 @@ int main() {
     cin >> timesCompounded;
 
     // Convert annual interest rate percentage to a decimal
-    rate /= 100;
+    rate = rate / 100;
 
-    // Calculate the amount in savings using the compound interest formula
-    amount = principal * pow((1 + rate / timesCompounded), timesCompounded);
+    // Calculate the amount in savings
+    amount = principal * pow(1 + rate / timesCompounded, timesCompounded);
 
     // Calculate the interest earned
-    interest = amount - principal;
+    double interest = amount - principal;
 
     // Set precision for output
     cout << fixed << setprecision(2);
